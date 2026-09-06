@@ -1,1 +1,3 @@
 # parcial2
+
+participantes:SantiagoAlexanderGiraldoBarrera;JuanJoséMirandaSolís

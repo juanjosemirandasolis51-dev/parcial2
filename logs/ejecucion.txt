@@ -1,4 +1,4 @@
-Fecha de ejecucion Fri Sep 11 09:49:14 COT 2026
+Fecha de ejecucion Fri Sep 11 13:19:20 COT 2026
 
 PRUEBA UNITARIA CHARMANDER CONTRA RATTATA
 Turno 1 Charmander ataca y hace 17 de dano y Rattata queda con 13 HP
@@ -16,7 +16,7 @@ Tamano de un nodo Pokemon 40 bytes
 Tamano de LineaEvolutiva 24 bytes
 Peso total de la linea evolutiva completa 312 bytes
 
-RAM disponible antes de las batallas 15016 MB
+RAM disponible antes de las batallas 2861 MB
 
 En la batalla numero 30 con 1500 XP evoluciono a Charmeleon
 En la batalla numero 100 con 5000 XP evoluciono a Charizard
@@ -24,28 +24,103 @@ En la batalla numero 100 con 5000 XP evoluciono a Charizard
 Batallas ganadas 100000
 Experiencia acumulada 5000000 XP
 Fase final Charizard
-Tiempo total 10840800 nanosegundos
-Tiempo total 10 milisegundos
-RAM disponible despues de las batallas 15013 MB
-Diferencia de RAM 2371584 bytes
+Tiempo total 25021900 nanosegundos
+Tiempo total 25 milisegundos
+RAM disponible despues de las batallas 2861 MB
+Diferencia de RAM -733184 bytes
 
-PRUEBA DE ESTRES CON 100000 CATERPIE
-Fase inicial Charmander
+CASO DE PRUEBA CON ROTACION DE EQUIPO Y 250 CATERPIE
+Cola inicial del equipo Bulbasaur Charmander Squirtle 
+Turno de campo de 50 enemigos y caja negra de 3 registros
 
-MEDICION DE MEMORIA CON JOL
-Tamano de un nodo Pokemon 40 bytes
-Tamano de LineaEvolutiva 24 bytes
-Peso total de la linea evolutiva completa 312 bytes
+RAM disponible antes de la horda 2861 MB
 
-RAM disponible antes de las batallas 14996 MB
+Bulbasaur evoluciono a Ivysaur con 1500 XP
+Turno de campo 1 salio Bulbasaur y derroto 50 enemigos
+Cola del equipo Charmander Squirtle Bulbasaur 
+Caja negra
+Bulbasaur vs Caterpie derrotados 50
 
-En la batalla numero 30 con 1500 XP evoluciono a Charmeleon
-En la batalla numero 100 con 5000 XP evoluciono a Charizard
+Charmander evoluciono a Charmeleon con 1500 XP
+Turno de campo 2 salio Charmander y derroto 50 enemigos
+Cola del equipo Squirtle Bulbasaur Charmander 
+Caja negra
+Bulbasaur vs Caterpie derrotados 50
+Charmander vs Caterpie derrotados 50
 
-Batallas ganadas 100000
-Experiencia acumulada 5000000 XP
-Fase final Charizard
-Tiempo total 3351500 nanosegundos
-Tiempo total 3 milisegundos
-RAM disponible despues de las batallas 14996 MB
-Diferencia de RAM 131072 bytes
+Squirtle evoluciono a Wartortle con 1500 XP
+Turno de campo 3 salio Squirtle y derroto 50 enemigos
+Cola del equipo Bulbasaur Charmander Squirtle 
+Caja negra
+Bulbasaur vs Caterpie derrotados 50
+Charmander vs Caterpie derrotados 50
+Squirtle vs Caterpie derrotados 50
+
+Bulbasaur evoluciono a Venusaur con 5000 XP
+Turno de campo 4 salio Bulbasaur y derroto 50 enemigos
+Cola del equipo Charmander Squirtle Bulbasaur 
+Caja negra
+Charmander vs Caterpie derrotados 50
+Squirtle vs Caterpie derrotados 50
+Bulbasaur vs Caterpie derrotados 50
+
+Charmander evoluciono a Charizard con 5000 XP
+Turno de campo 5 salio Charmander y derroto 50 enemigos
+Cola del equipo Squirtle Bulbasaur Charmander 
+Caja negra
+Squirtle vs Caterpie derrotados 50
+Bulbasaur vs Caterpie derrotados 50
+Charmander vs Caterpie derrotados 50
+
+Enemigos derrotados 250
+Turnos de campo usados 5
+Cola final del equipo Squirtle Bulbasaur Charmander 
+Tiempo total 16228500 nanosegundos
+Tiempo total 16 milisegundos
+RAM disponible despues de la horda 2861 MB
+Diferencia de RAM 520192 bytes
+
+Estado final de la caja negra con capacidad 3
+Squirtle vs Caterpie derrotados 50
+Bulbasaur vs Caterpie derrotados 50
+Charmander vs Caterpie derrotados 50
+
+Squirtle termino como Wartortle con 2500 XP
+Bulbasaur termino como Venusaur con 5000 XP
+Charmander termino como Charizard con 5000 XP
+
+HORDA MASIVA CON ROTACION DE EQUIPO Y 100000 CATERPIE
+Cola inicial del equipo Bulbasaur Charmander Squirtle 
+Turno de campo de 50 enemigos y caja negra de 10 registros
+
+RAM disponible antes de la horda 2847 MB
+
+Bulbasaur evoluciono a Ivysaur con 1500 XP
+Charmander evoluciono a Charmeleon con 1500 XP
+Squirtle evoluciono a Wartortle con 1500 XP
+Bulbasaur evoluciono a Venusaur con 5000 XP
+Charmander evoluciono a Charizard con 5000 XP
+Squirtle evoluciono a Blastoise con 5000 XP
+Enemigos derrotados 100000
+Turnos de campo usados 2000
+Cola final del equipo Squirtle Bulbasaur Charmander 
+Tiempo total 21348600 nanosegundos
+Tiempo total 21 milisegundos
+RAM disponible despues de la horda 2854 MB
+Diferencia de RAM -6873088 bytes
+
+Estado final de la caja negra con capacidad 10
+Charmander vs Caterpie derrotados 50
+Squirtle vs Caterpie derrotados 50
+Bulbasaur vs Caterpie derrotados 50
+Charmander vs Caterpie derrotados 50
+Squirtle vs Caterpie derrotados 50
+Bulbasaur vs Caterpie derrotados 50
+Charmander vs Caterpie derrotados 50
+Squirtle vs Caterpie derrotados 50
+Bulbasaur vs Caterpie derrotados 50
+Charmander vs Caterpie derrotados 50
+
+Squirtle termino como Blastoise con 1665000 XP
+Bulbasaur termino como Venusaur con 1667500 XP
+Charmander termino como Charizard con 1667500 XP

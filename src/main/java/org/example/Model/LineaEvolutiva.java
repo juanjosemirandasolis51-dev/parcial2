@@ -7,12 +7,14 @@ public class LineaEvolutiva {
 
     private Pokemon faseActual;
     private  int experienciaAcumulada;
+    private String nombre;
 
 
     public LineaEvolutiva(Pokemon faseInicial){
 
         faseActual=faseInicial;
         experienciaAcumulada = 0;
+        nombre = faseInicial.getNombre();
 
     }
 
@@ -31,6 +33,10 @@ public class LineaEvolutiva {
 
         }
 
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     public Pokemon getFaseActual() {

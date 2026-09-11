@@ -1,0 +1,51 @@
+Fecha de ejecucion Fri Sep 11 09:49:14 COT 2026
+
+PRUEBA UNITARIA CHARMANDER CONTRA RATTATA
+Turno 1 Charmander ataca y hace 17 de dano y Rattata queda con 13 HP
+Turno 2 Rattata ataca y hace 13 de dano y Charmander queda con 26 HP
+Turno 3 Charmander ataca y hace 17 de dano y Rattata queda con 0 HP
+Gano la batalla true
+Experiencia acumulada 50 XP
+Fase actual Charmander
+
+ENTRENAMIENTO MASIVO CON HORDA ALEATORIA
+Fase inicial Charmander
+
+MEDICION DE MEMORIA CON JOL
+Tamano de un nodo Pokemon 40 bytes
+Tamano de LineaEvolutiva 24 bytes
+Peso total de la linea evolutiva completa 312 bytes
+
+RAM disponible antes de las batallas 15016 MB
+
+En la batalla numero 30 con 1500 XP evoluciono a Charmeleon
+En la batalla numero 100 con 5000 XP evoluciono a Charizard
+
+Batallas ganadas 100000
+Experiencia acumulada 5000000 XP
+Fase final Charizard
+Tiempo total 10840800 nanosegundos
+Tiempo total 10 milisegundos
+RAM disponible despues de las batallas 15013 MB
+Diferencia de RAM 2371584 bytes
+
+PRUEBA DE ESTRES CON 100000 CATERPIE
+Fase inicial Charmander
+
+MEDICION DE MEMORIA CON JOL
+Tamano de un nodo Pokemon 40 bytes
+Tamano de LineaEvolutiva 24 bytes
+Peso total de la linea evolutiva completa 312 bytes
+
+RAM disponible antes de las batallas 14996 MB
+
+En la batalla numero 30 con 1500 XP evoluciono a Charmeleon
+En la batalla numero 100 con 5000 XP evoluciono a Charizard
+
+Batallas ganadas 100000
+Experiencia acumulada 5000000 XP
+Fase final Charizard
+Tiempo total 3351500 nanosegundos
+Tiempo total 3 milisegundos
+RAM disponible despues de las batallas 14996 MB
+Diferencia de RAM 131072 bytes

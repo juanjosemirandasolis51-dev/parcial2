@@ -1,59 +1,96 @@
 package org.example;
 
+import java.util.Random;
+
 import org.example.Model.Pokemon;
 import org.example.Model.LineaEvolutiva;
 import org.example.Service.SimulacionService;
+import org.example.Service.Log;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static LineaEvolutiva crearLineaEvolutiva() {
 
-        // --- Crear los nodos (de atrás hacia adelante) ---
         Pokemon charizard = new Pokemon("Charizard", 78, 84, 78, -1);
         Pokemon charmeleon = new Pokemon("Charmeleon", 58, 64, 58, 5000);
         Pokemon charmander = new Pokemon("Charmander", 39, 52, 43, 1500);
 
-        // --- Armar la cadena evolutiva ---
         charmander.setSiguienteEvolucion(charmeleon);
         charmeleon.setSiguienteEvolucion(charizard);
 
-        // --- Crear la línea evolutiva ---
-        LineaEvolutiva miPokemon = new LineaEvolutiva(charmander);
+        return new LineaEvolutiva(charmander);
 
-        SimulacionService servicio = new SimulacionService();
+    }
 
-        // ========== PRUEBA UNITARIA ==========
-        System.out.println("=== PRUEBA UNITARIA: Charmander vs Rattata ===");
-        System.out.println("Antes: " + miPokemon.getFaseActual().getNombre());
+    public static Pokemon[] crearHordaAleatoria(int cantidad) {
 
-        Pokemon rattata = new Pokemon("Rattata", 30, 56, 35, 0);
-        Pokemon[] pruebaUnitaria = { rattata };
-        servicio.iniciarEntrenamientoMasivo(miPokemon, pruebaUnitaria);
+        Pokemon[] horda = new Pokemon[cantidad];
+        Random random = new Random();
 
-        System.out.println("XP acumulada: " + miPokemon.getExperienciaAcumulada());
-        System.out.println("Fase actual: " + miPokemon.getFaseActual().getNombre());
+        for (int i = 0; i < cantidad; i++) {
 
-        // ========== PRUEBA DE ESTRÉS ==========
-        // Reiniciar con nueva línea evolutiva
-        charizard = new Pokemon("Charizard", 78, 84, 78, -1);
-        charmeleon = new Pokemon("Charmeleon", 58, 64, 58, 5000);
-        charmander = new Pokemon("Charmander", 39, 52, 43, 1500);
-        charmander.setSiguienteEvolucion(charmeleon);
-        charmeleon.setSiguienteEvolucion(charizard);
-        miPokemon = new LineaEvolutiva(charmander);
+            int vida = 20 + random.nextInt(31);
+            int ataque = 20 + random.nextInt(16);
+            int defensa = 20 + random.nextInt(21);
 
-        System.out.println("\n=== PRUEBA DE ESTRÉS: 100,000 Caterpie ===");
-        System.out.println("Fase inicial: " + miPokemon.getFaseActual().getNombre());
+            horda[i] = new Pokemon("Enemigo", vida, ataque, defensa, 0);
 
-        // Generar horda de 100,000 Caterpie
-        Pokemon[] horda = new Pokemon[100000];
-        for (int i = 0; i < horda.length; i++) {
+        }
+
+        return horda;
+
+    }
+
+    public static Pokemon[] crearHordaCaterpie(int cantidad) {
+
+        Pokemon[] horda = new Pokemon[cantidad];
+
+        for (int i = 0; i < cantidad; i++) {
             horda[i] = new Pokemon("Caterpie", 45, 30, 35, 0);
         }
 
-        servicio.iniciarEntrenamientoMasivo(miPokemon, horda);
+        return horda;
 
-        System.out.println("Fase final: " + miPokemon.getFaseActual().getNombre());
-        System.out.println("XP total: " + miPokemon.getExperienciaAcumulada());
     }
+
+    public static void main(String[] args) {
+
+        Log.iniciar();
+
+        SimulacionService servicio = new SimulacionService();
+
+        Log.escribir("PRUEBA UNITARIA CHARMANDER CONTRA RATTATA");
+        LineaEvolutiva prueba = crearLineaEvolutiva();
+        Pokemon rattata = new Pokemon("Rattata", 30, 56, 35, 0);
+
+        boolean gano = servicio.batalla(prueba, rattata, true);
+
+        Log.escribir("Gano la batalla " + gano);
+        Log.escribir("Experiencia acumulada " + prueba.getExperienciaAcumulada() + " XP");
+        Log.escribir("Fase actual " + prueba.getFaseActual().getNombre());
+        Log.escribir();
+
+        Log.escribir("ENTRENAMIENTO MASIVO CON HORDA ALEATORIA");
+        LineaEvolutiva pokemonAleatorio = crearLineaEvolutiva();
+        Pokemon[] hordaAleatoria = crearHordaAleatoria(100000);
+
+        Log.escribir("Fase inicial " + pokemonAleatorio.getFaseActual().getNombre());
+        Log.escribir();
+
+        servicio.iniciarEntrenamientoMasivo(pokemonAleatorio, hordaAleatoria);
+        Log.escribir();
+
+        Log.escribir("PRUEBA DE ESTRES CON 100000 CATERPIE");
+        LineaEvolutiva miPokemon = crearLineaEvolutiva();
+        Pokemon[] hordaCaterpie = crearHordaCaterpie(100000);
+
+        Log.escribir("Fase inicial " + miPokemon.getFaseActual().getNombre());
+        Log.escribir();
+
+        servicio.iniciarEntrenamientoMasivo(miPokemon, hordaCaterpie);
+
+        Log.cerrar();
+
+    }
+
 }
